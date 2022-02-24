@@ -1,14 +1,8 @@
 #include <iostream>
-
-
 using namespace std;
 
-
-
-
-int main() {
-
-cout << "Hello World!";
-
-return 0;   
-}
+int main(){
+    one();
+    cout << rand();
+    return 0;
+}   

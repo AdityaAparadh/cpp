@@ -1,7 +1,7 @@
 // MADE BY ADITYA
 // Programming Language: C++
-// 
-// Enter your input length for Pascals Triangle only as a positive integer
+//
+// Enter your input length for Pascal's Triangle only as a positive integer less than 13
 
 #include <iostream>
 
@@ -28,16 +28,20 @@ int combination(int n, int r){
     b = factorial(r);
     c = factorial(n-r);
 
-    comb = (a/(b*c)); 
+    comb = (a/(b*c));
 
     return comb;
 }
 
 
 void pascalsTriangle(int num){
+    int b =0;
+    while(b<=num){
 
-
-
+        cout << "    ";
+        b++;
+    }
+    cout << "1 \n\n"; // Initial 1
     for(int n=1; n<=num ; n++){
 
         for(int a = num -n ;(a)>=0;a--){
@@ -47,7 +51,7 @@ void pascalsTriangle(int num){
 
         cout << 1 << "      ";
         for(int r=1; r<=n ; r++){
-                
+
                 int out;
                 out= combination(n,r);
                 cout << out << "      ";
@@ -68,9 +72,12 @@ int input;
 cin >> input;
 
 if ( input <=0){
-    cout << " Please enter a valid length for the Pascals Triangle!";
-} else{
-cout << "Pascals triangle: \n\n" <<endl;
+    cout << " Please enter a valid length for the Pascal's Triangle!";
+} else if(input > 12){
+    cout << "The Pascal's Triangle becomes too distorted at length above 12, try a smaller number!";
+}
+else{
+cout << "Pascal's triangle: \n\n" <<endl;
 pascalsTriangle(input);
 }
 
@@ -83,5 +90,5 @@ cout << "#                                                       # \n";
 cout << "#                       ADITYA                          # \n";
 cout << "#                                                       # \n";
 cout << "######################################################### \n";
-return 0;   
+return 0;
 }
